@@ -1,7 +1,7 @@
-export default function Home() {
+export default async function Home() {
   return (
     <main>
-      <div>Hello Menu</div>
+      <div className="text-secondary">Hello Menu</div>
     </main>
   );
 }

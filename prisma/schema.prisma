@@ -11,14 +11,14 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(uuid()) @db.ObjectId @map("_id")
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   name     String?
   phone   String?   @unique
   password String?
 }
 
 model Category {
-  id              String     @id @default(uuid()) @db.ObjectId @map("_id")
+  id              String    @id @default(auto()) @map("_id") @db.ObjectId
   name            String?
   addingDates     DateTime?  @default(now())
   description     String?
@@ -31,12 +31,12 @@ model Category {
 
 
 model Option {
-  id   String     @id @default(uuid()) @db.ObjectId @map("_id")
+  id   String    @id @default(auto()) @map("_id") @db.ObjectId
   rate Float?
 }
 
 model Product {
-  id          String     @id @default(uuid()) @db.ObjectId @map("_id")
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String?
   categoryID  String?
   description String?
@@ -46,6 +46,5 @@ model Product {
   imageName       String?
   appear      Boolean?   @default(true)
   exist       Boolean?   @default(true)
-  hidden      Boolean?   @default(false)
 }
 
